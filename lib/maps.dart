@@ -4,6 +4,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart' as ll;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
+import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
 
 
 class MapViewerEditorPage extends StatefulWidget {
