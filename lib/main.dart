@@ -1,4 +1,3 @@
-import 'package:firebaseapp/notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,6 +6,9 @@ import 'firebase_options.dart';
 import 'login.dart';
 import 'welcome.dart';
 import 'notes.dart';
+import 'notifications.dart';
+import 'l10n/app_localizations.dart';
+
 
 Future<void> main() async {
  WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +27,10 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
      title: 'Firebase App',
      theme: ThemeData(primarySwatch: Colors.indigo),
-     home: const AuthGate(),
+   localizationsDelegates: AppLocalizations.localizationsDelegates,
+   supportedLocales: AppLocalizations.supportedLocales,
+     locale: AppLocalizations.supportedLocales.first,
+ home: const AuthGate(),
    );
  }
 }
@@ -70,7 +75,7 @@ class HomePage extends StatelessWidget {
            ),
            ListTile(
              leading: const Icon(Icons.note),
-             title: const Text('Anotações'),
+              title: Text(AppLocalizations.of(context)!.notes),
              onTap: () async {
                Navigator.push(
                  context,

@@ -322,7 +322,7 @@ class _NotesPageState extends State<NotesPage> {
                    }
                    return ListView.separated(
                      itemCount: docs.length,
-                     separatorBuilder: (_, __) => const Divider(height: 0),
+                     separatorBuilder: (_, _) => const Divider(height: 0),
                      itemBuilder: (context, i) {
                        final doc = docs[i];
                        final data = doc.data();
